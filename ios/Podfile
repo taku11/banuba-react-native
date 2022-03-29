@@ -1,0 +1,45 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+source 'https://github.com/Banuba/specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '11.0'
+
+target 'vesdkreactnativeintegrationsample' do
+  use_unimodules!
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+  
+  pod 'BanubaVideoEditorSDK', '1.21.0'
+  pod 'BanubaMusicEditorSDK', '1.21.0'
+  pod 'BanubaOverlayEditorSDK', '1.21.0'
+  pod 'BanubaSDKSimple', '1.21.0'
+  pod 'BanubaSDKServicing', '1.21.0'
+  pod 'VideoEditor', '1.21.0'
+  pod 'BanubaUtilities', '1.21.0'
+  pod 'VEEffectsSDK', '1.21.0'
+  pod 'BanubaLicenseServicingSDK', '1.21.0'
+  pod 'BNBLicenseUtils', '1.21.0'
+  pod 'BanubaARCloudSDK', '1.21.0' #optional
+  pod 'BanubaAudioBrowserSDK', '1.21.0' #optional
+  pod 'BanubaVideoEditorGallerySDK', '1.21.0' #optional
+  pod 'BanubaEffectPlayer', '1.21.0' #optional
+  pod 'BanubaSDK', '1.21.0' #optional
+  pod 'VEPlaybackSDK', '1.21.0'
+  pod 'BanubaVideoEditorTrimSDK', '1.21.0'
+
+  # Uncomment the code below to enable Flipper.
+  #
+  # You should not install Flipper in CI environments when creating release
+  # builds, this will lead to significantly slower build times.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work.
+  #
+  #  use_flipper!
+  #  post_install do |installer|
+  #    flipper_post_install(installer)
+  #  end
+end
